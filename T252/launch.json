@@ -1,0 +1,8 @@
+{
+	"input_network_path": "C:\\ATTEST\\tools\\WP2\\T252\\input_data\\Input Data - Networks.xlsx",
+	"input_resources_path": "C:\\ATTEST\\tools\\WP2\\T252\\input_data\\Input Data - Resources.xlsx",
+	"input_other_path": "C:\\ATTEST\\tools\\WP2\\T252\\input_data\\Input Data - Other.xlsx",
+	"input_da_bids": "C:\\ATTEST\\tools\\WP2\\T252\\input_data\\Input Data - DA bids.xlsx",
+	"input_agc_signal": "C:\\ATTEST\\tools\\WP2\\T252\\input_data\\Input Data - AGC.xlsx",
+	"output_dir": "C:\\ATTEST\\tools\\WP2\\T252\\output_data"
+}

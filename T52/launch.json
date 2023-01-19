@@ -1,0 +1,57 @@
+{
+	"output_dir": "C:\\ATTEST\\tools\\WP5\\T52\\output_data\\",
+	"mainConfig": [
+		{
+			"config": "Economic Impact",
+			"path": "C:\\ATTEST\\tools\\WP5\\T52\\dataset\\tool51_Spain_supports_EI.csv",
+			"index": "Support_ID",
+			"variables": [
+				"H1_KPI_weighted_power",
+				"H2_birdlife_KPI",
+				"H3_defecs_severity_KPI"
+			],
+			"weights": [
+				"0.3",
+				"0.3",
+				"0.3"
+			]
+		},
+		{
+			"config": "Life Assessment",
+			"path": "C:\\ATTEST\\tools\\WP5\\T52\\dataset\\tool51_Spain_supports_LA.csv",
+			"index": "Support_ID",
+			"variables": [
+				"H1_KPI_weighted_power",
+				"H2_Criticity",
+				"H3_Condition",
+				"H4_Risk"
+			],
+			"weights": [
+				"0.25",
+				"0.25",
+				"0.25",
+				"0.25"
+			]
+		},
+		{
+			"config": "Maintenance Stratgy",
+			"path": "C:\\ATTEST\\tools\\WP5\\T52\\dataset\\tool51_Spain_supports_M.csv",
+			"index": "Support_ID",
+			"variables": [
+				"H2_defects",
+				"H3_defect_severity"
+			],
+			"weights": [
+				"0.5",
+				"0.5"
+			]
+		}
+	],
+	"coordinatesConfig": {
+		"coordinatesFilePath": "C:\\ATTEST\\tools\\WP5\\T52\\dataset\\Cordinate.csv",
+		"coordinatesIdentifier": "additional_id",
+		"latColumn": "x",
+		"longColumn": "y",
+		"regionCB": "Europe"
+	}
+}

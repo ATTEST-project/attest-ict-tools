@@ -1,0 +1,27 @@
+################################################################################################
+#											       #	
+#					Commments 					       #	
+#											       #	
+################################################################################################
+
+1. The scenario_gen_tool.jl is the main Julia file for the generation of PV and Wind DG sceanarios.
+   This file is calling all the other Julia files which are present in the folder.
+
+2. The data input file is "data_scenarios.ods" 
+
+3. The output file of this code is "scenario_gen.ods" which becomes the input file of stochastic 
+   multi-period AC-OPF problem.	
+
+4. This file MUST be run before running the multi-period AC-OPF tool and the output file of this
+   tool then MUST be placed in the multi-period AC-OPF tool folder.	
+
+5. Please comment in this file each time when you make some changes in the code.
+
+6. The comments MUST BE in the following format
+   
+%%% ------------------- Date_Your name --------------------- %%%
+    1. Line # in the code and a brief description of what you have done
+    2. Line # in the code and a brief description of what you have done
+    3. and so on
+%%% -------------------------------------------------------- %%%  			
+	

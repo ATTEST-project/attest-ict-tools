@@ -1,0 +1,30 @@
+using Pkg
+Pkg.status()
+print(ENV["PYTHON"])
+print(ENV["JULIA_PROJECT"])
+Pkg.generate(ENV["JULIA_PROJECT"])
+Pkg.activate(ENV["JULIA_PROJECT"])
+
+Pkg.add("ArgParse")
+Pkg.add("JSON")
+# with this version it is working
+Pkg.add(name="Distributions", version="0.24.10")
+# with this version it is working
+Pkg.add(name="DataFrames", version="0.22.7")
+Pkg.add("StatsBase")
+Pkg.add("CSV")
+Pkg.add("HypothesisTests")
+Pkg.add("LinearAlgebra")
+Pkg.add("Plots")
+Pkg.add("StatsPlots")
+Pkg.add("BoxCoxTrans")
+Pkg.add("JuMP")
+Pkg.add("Ipopt")
+Pkg.add("Random")
+Pkg.add("Roots")
+Pkg.add("ARFIMA")
+Pkg.add("PyCall")
+Pkg.add("OdsIO")
+Pkg.build("OdsIO")
+Pkg.status() 
+exit(); 

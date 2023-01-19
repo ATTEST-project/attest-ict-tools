@@ -1,0 +1,45 @@
+conda create --prefix=C:\ATTEST\tools\pyenvs\TSG\py38_conda_env -y python=3.8
+
+conda activate C:\ATTEST\tools\pyenvs\TSG\py38_conda_env
+
+python -m pip install --upgrade pip
+
+pip install --upgrade setuptools
+
+conda install statsmodels
+conda install matplotlib
+conda install ezodf
+
+julia
+
+ENV["PYTHON"] = "C:\\ATTEST\\tools\\pyenvs\\TSG\\py38_conda_env\\python.exe"
+
+using Pkg
+
+Pkg.generate("C:\\ATTEST\\tools\\juliaenvs\\TSG\\TSG_JL_ENV")
+Pkg.activate("C:\\ATTEST\\tools\\juliaenvs\\TSG\\TSG_JL_ENV")
+
+Pkg.add("ArgParse")
+# in caso eliminare ArgParse e TextWrap da C:\ATTEST\Julia-167-depot\packages
+Pkg.add("JSON")
+
+Pkg.add(name="Distributions", version="0.24.10") -> with this version it is working
+Pkg.add(name="DataFrames", version="0.22.7") -> with this version it is working
+
+Pkg.add("StatsBase")
+Pkg.add("CSV")
+Pkg.add("HypothesisTests")
+Pkg.add("LinearAlgebra")
+Pkg.add("Plots")
+Pkg.add("StatsPlots")
+Pkg.add("BoxCoxTrans")
+Pkg.add("JuMP")
+Pkg.add("Ipopt")
+Pkg.add("Random")
+Pkg.add("Roots")
+Pkg.add("ARFIMA")
+Pkg.add("PyCall")
+Pkg.add("OdsIO")
+
+Pkg.build("OdsIO")
+# controllare logs: in caso pulire C:\Users\<user>\AppData\Roaming\Python\Python38 e rifare Pkg.build("OdsIO") con ENV["PYTHON"] settato

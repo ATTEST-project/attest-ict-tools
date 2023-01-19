@@ -1,0 +1,32 @@
+{
+	"network": {
+		"branches_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\network\\branches.csv",
+		"buses_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\network\\buses.csv",
+		"generators_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\network\\generators.csv",
+		"loads_info_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\network\\loads_info.csv"
+	},
+	"energy": {
+		"gen_bid_prices_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\energy\\gen_bid_prices.csv",
+		"gen_bid_qnt_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\energy\\gen_bid_qnt.csv",
+		"load_bid_prices_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\energy\\load_bid_prices.csv",
+		"loads_bid_qnt_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\energy\\loads_bid_qnt.csv"
+	},
+	"secondary": {
+		"gen_bid_prices_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\secondary\\gen_bid_prices.csv",
+		"gen_bid_qnt_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\secondary\\gen_bid_qnt.csv",
+		"sec_req_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\secondary\\sec_req.csv"
+	},
+	"tertiary": {
+		"gen_bid_prices_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\tertiary\\gen_bid_prices.csv",
+		"gen_bid_qnt_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\tertiary\\gen_bid_qnt.csv",
+		"ter_req_path": "C:\\ATTEST\\tools\\WP2\\T26\\input_data\\tertiary\\ter_req.csv"
+	},
+	"output_dir": {
+		"energy": "C:\\ATTEST\\tools\\WP2\\T26\\output_data\\energy",
+		"secondary": "C:\\ATTEST\\tools\\WP2\\T26\\output_data\\secondary",
+		"tertiary": "C:\\ATTEST\\tools\\WP2\\T26\\output_data\\tertiary"
+	},
+	"run_energy": true,
+	"run_secondary": false,
+	"run_tertiary": false
+}

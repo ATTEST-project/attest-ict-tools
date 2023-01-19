@@ -1,0 +1,9 @@
+{
+	"modelpath1": "C:\\ATTEST\\tools\\WP5\\T51\\input_files\\CM_HOPS\\modelTR1.h5",
+	"modelpath2": "C:\\ATTEST\\tools\\WP5\\T51\\input_files\\CM_HOPS\\modelTR1_error.json",
+	"filepath2": "C:\\ATTEST\\tools\\WP5\\T51\\input_files\\Other files\\HOPS_WP5_Transformers_1Y_condition.xlsx",
+	"item1": "TR1_Current",
+	"item2": "TR1_Oil_temp",
+	"item3": "TR1_Winding_temp",
+	"output_dir": "C:\\ATTEST\\Tools\\WP5\\T51\\output_data\\monitoring\\"
+}

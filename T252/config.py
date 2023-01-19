@@ -1,0 +1,6 @@
+input_network_path = ""
+input_resources_path = ""
+input_other_path = ""
+input_da_bids = ""
+input_agc_signal = ""
+output_dir = ""

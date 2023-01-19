@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Action Suggested</title>
+      <!-- <link rel="stylesheet" href="{{ root_folder }}/res/css/table.css"> -->
+      <style>
+        body{margin:0;padding:2rem;background:linear-gradient(45deg,#06b29b,#002b38);font-family:sans-serif;font-weight:100;background-repeat:no-repeat;background-attachment:fixed}@font-face{font-family:Arial_Rounded;src:url(../res/fonts/ARLRDBD.TTF),url(ARLRDBD.eot)}body{font-family:Arial_Rounded,sans-serif;background-color:#CCC;font-size:16px}.label-container{position:fixed;bottom:48px;right:105px;display:table;visibility:hidden}.label-text{color:#FFF;background:rgba(51,51,51,0.5);display:table-cell;vertical-align:middle;padding:10px;border-radius:3px}.label-arrow{display:table-cell;vertical-align:middle;color:#333;opacity:.5}.float{position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#05B9E3;color:#FFF;border-radius:50px;text-align:center}.my-float{font-size:24px;margin-top:18px}a.float + div.label-container{visibility:hidden;opacity:0;transition:visibility 0s,opacity .5s ease}a.float:hover + div.label-container{visibility:visible;opacity:1}.title{font-family:Arial_Rounded,sans-serif;font-style:normal;font-size:40px;font-weight:300;text-align:center;color:#fff}.center{margin-left:auto;margin-right:auto}.container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}table{text-align:left;position:relative;width:70%;box-shadow:-10px 0 20px rgba(0,0,0,0.1);empty-cells:hide;border-right:25px solid transparent}th,td{padding:15px;background-color:rgba(255,255,255,0.2);color:#fff}th{background:#fff;position:sticky;top:0;box-shadow:0 2px 2px -1px rgba(0,0,0,0.4)}thead th{background-color:#006161}thead th:hover{background-color:rgba(255,255,255,0.1)}tbody tr:hover{background-color:rgba(255,255,255,0.3)}tbody td:hover:before{content:"";position:absolute;left:0;right:0;z-index:-1}
+      </style>
+      <!-- <link rel="stylesheet" href="{{ root_folder }}/res/css/sort.css"> -->
+      <style>
+        .table-sortable th{cursor:pointer}.table-sortable .th-sort-asc::after{content:"\25b4"}.table-sortable .th-sort-desc::after{content:"\25be"}.table-sortable .th-sort-asc::after,.table-sortable .th-sort-desc::after{margin-left:5px}.table-sortable .th-sort-asc,.table-sortable .th-sort-desc{background:rgba(0,0,0,0.1)}
+      </style>
+  </head>
+  <body>
+    <!-- <p style="text-align: center;">
+      <img class="center" src="{{ root_folder }}/res/img/logo_white.png" alt="ATTEST">
+    </p> -->
+    <p class="title">Best-decision suggestion</p>
+    <table class="center table-sortable">
+      <thead>
+        <tr class="table-header">
+        {% for header in data.columns %}
+          <th>{{ header }}</th>
+        {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+      {% for row in data.to_numpy() %}
+        <tr class="table-row">
+        {% for value in row %}
+          <td>{{ value }}</td>
+        {% endfor %}
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <!--a href="static/home.html" class="float">
+      <img src="img\return_icon.png" alt="icon" width="40px" style="padding-top: 12px;">
+    </a-->
+    <div class="label-container">
+    <div class="label-text">Return</div>
+  <!-- <script src="{{ root_folder }}/res/js/tablesort.js"></script> -->
+  <script type="text/javascript">
+    function sortTableByColumn(table,column,asc=true){const dirModifier=asc?1:-1;const tBody=table.tBodies[0];const rows=Array.from(tBody.querySelectorAll("tr"));const sortedRows=rows.sort((a,b)=>{const aColText=a.querySelector(`td:nth-child(${column+1})`).textContent.trim();const bColText=b.querySelector(`td:nth-child(${column+1})`).textContent.trim();return aColText>bColText?(1*dirModifier):(-1*dirModifier)});while(tBody.firstChild){tBody.removeChild(tBody.firstChild)}tBody.append(...sortedRows);table.querySelectorAll("th").forEach(th=>th.classList.remove("th-sort-asc","th-sort-desc"));table.querySelector(`th:nth-child(${column+1})`).classList.toggle("th-sort-asc",asc);table.querySelector(`th:nth-child(${column+1})`).classList.toggle("th-sort-desc",!asc)}document.querySelectorAll(".table-sortable th").forEach(headerCell=>{headerCell.addEventListener("click",()=>{const tableElement=headerCell.parentElement.parentElement.parentElement;const headerIndex=Array.prototype.indexOf.call(headerCell.parentElement.children,headerCell);const currentIsAscending=headerCell.classList.contains("th-sort-asc");sortTableByColumn(tableElement,headerIndex,!currentIsAscending)})});
+  </script>
+  </body>
+</html>

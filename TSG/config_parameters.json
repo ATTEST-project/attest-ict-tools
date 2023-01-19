@@ -1,0 +1,7 @@
+{
+	"parameters": {
+		"input_file": "C:\\ATTEST\\tools\\WP4\\TSG\\input_data\\data_scenarios.ods",
+		"output_file": "C:\\ATTEST\\tools\\WP4\\TSG\\output_data\\scenario_gen.ods",
+		"nsc": 10
+	}
+}

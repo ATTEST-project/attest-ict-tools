@@ -1,0 +1,16 @@
+{
+	"firstConfig": {
+		"path": "C:\\ATTEST\\tools\\WP5\\T53\\configs\\tool51_Spain_supports_ALL.cfg",
+		"nScenarios": 5,
+		"assetsName": "tool51_Spain_supports_ALL_20221125_1334",
+		"output_dir": "C:\\ATTEST\\tools\\WP5\\T53\\output_data\\first_part"
+	},
+	"t52Config": {
+		"input_dir": "C:\\ATTEST\\tools\\WP5\\T53\\output_data\\first_part\\future_scen",
+		"output_dir": "C:\\ATTEST\\tools\\WP5\\T53\\output_data\\t52_part"
+	},
+	"actionsConfig": {
+		"input_dir": "C:\\ATTEST\\tools\\WP5\\T53\\output_data\\first_part\\Result_from_T52",
+		"output_dir": "C:\\ATTEST\\tools\\WP5\\T53\\output_data\\actions_part"
+	}
+}

@@ -1,0 +1,46 @@
+it seems that it does not work with spaces in path
+
+conda create --prefix <TOOL_ROOT_PATH>\py38_conda_env python==3.8.13
+
+conda activate <TOOL_ROOT_PATH>\py38_conda_env
+
+python -m pip install --upgrade pip
+
+pip install --upgrade setuptools
+
+conda install -c conda-forge statsmodels
+conda install -c conda-forge matplotlib
+
+julia
+
+ENV["PYTHON"] = "<TOOL_ROOT_PATH>\\py38_conda_env\\python.exe"
+
+using Pkg
+
+Pkg.generate("SGT_JL_ENV")
+Pkg.activate("SGT_JL_ENV")
+
+Pkg.add(name="Distributions", version="0.24.10") -> with this version it is working
+Pkg.add(name="DataFrames", version="0.22.7") -> with this version it is working
+
+Pkg.add("StatsBase"), 
+Pkg.add("CSV")
+Pkg.add("HypothesisTests")
+Pkg.add("LinearAlgebra")
+Pkg.add("OdsIO")
+Pkg.add("Plots")
+Pkg.add("StatsPlots")
+Pkg.add("BoxCoxTrans")
+Pkg.add("JuMP") 
+Pkg.add("Ipopt") 
+Pkg.add("Random") 
+Pkg.add("Roots")
+Pkg.add("ARFIMA")
+
+Pkg.add("PyCall")
+
+Pkg.build("PyCall") -> check in log file if python path is pointing to conda env
+
+exit()
+
+julia --project=SGT_JL_ENV scenario_gen_tool.jl
