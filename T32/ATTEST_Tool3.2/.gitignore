@@ -1,9 +1,0 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-pyensys.__pycache__/
-*.py[cod]
-*$py.class
-
-#IDEs
-/.idea
-*.iml
