@@ -200,7 +200,7 @@ def pyensys_ATTEST_Distribution_wp6(**kwargs):
                            data["test_case"],
                            data["peak_hour"],
                            data["no_year"])
-    elif (data["model"] == "investment" or data["model"] == "screening"):
+    if (data["model"] == "investment" or data["model"] == "all"):
         print(" --------- Running the investment model --------- ")
         run_main_investment(data["input_dir"],
                             data["output_dir"],
