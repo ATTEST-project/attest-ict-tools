@@ -1,0 +1,21 @@
+{
+	"parameters": {
+		"ntp": 24,
+		"scenario": 1,
+		"flex_apc": 1,
+		"flex_oltc": 1,
+		"oltc_bin": 1,
+		"flex_adpf": 1,
+		"flex_fl": 1,
+		"fl_bin": 1,
+		"flex_str": 1,
+		"str_bin": 1,
+		"case_name": "C:\\ATTEST\\tools\\WP4\\T41V2\\input_data\\2023_08_31\\HR_DX_01\\GREEN\\HR_Dx_01_2030_Su_Bd_green_WithFlex_GREEN",
+		"network_file": "C:\\ATTEST\\tools\\WP4\\T41V2\\input_data\\2023_08_31\\HR_DX_01\\GREEN\\HR_Dx_01_2030_Su_Bd_green_WithFlex_GREEN.ods",
+		"auxiliary_file": "C:\\ATTEST\\tools\\WP4\\T41V2\\input_data\\2023_08_31\\HR_DX_01\\GREEN\\HR_Dx_01_2030_Su_Bd_green_WithFlex_GREEN_flex.ods",
+		"scenario_file": "C:\\ATTEST\\tools\\WP4\\T41V2\\input_data\\scenario_gen.ods",
+		"output_file": "C:\\ATTEST\\tools\\WP4\\T41V2\\output_data\\demo_int_output.xlsx",
+		"outlog_file": "C:\\ATTEST\\tools\\WP4\\T41V2\\output_data\\OutLog.xlsx"
+	}
+}
+

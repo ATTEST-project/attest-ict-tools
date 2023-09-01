@@ -1,0 +1,22 @@
+This folder contains the tractable Sequential Linearization Algorithm (the GEM!), implemented in Julia, for flexibility procurement in active
+distribution systems.
+
+Steps to run the Tractable Tool
+
+1. Open 'main_sc_milp.jl' file. This file contains all the packages, functions and main algorithm. 
+2. Select the network input file as well the output file for the respective network. 
+3. Select the flexible options that user wants to include in the optimization model
+4. Run the file. 
+
+The description of algorihtm is presented in the following paper. Please cite this paper if you use this algorithm for your work. Thanks!
+
+
+Usman, M., & Capitanescu, F. (2022). A Novel Tractable Methodology to Stochastic Multi-Period AC OPF in Active Distribution Systems Using Sequential Linearization Algorithm. IEEE Transactions on Power Systems.
+
+@article{usman2022novel,
+  title={A Novel Tractable Methodology to Stochastic Multi-Period AC OPF in Active Distribution Systems Using Sequential Linearization Algorithm},
+  author={Usman, Muhammad and Capitanescu, Florin},
+  journal={IEEE Transactions on Power Systems},
+  year={2022},
+  publisher={IEEE}
+}

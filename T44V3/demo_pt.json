@@ -1,0 +1,13 @@
+{
+	"parameters": {
+		"network_file": "C:\\ATTEST\\Tools\\WP4\\T44V3\\input_data\\PT.ods",
+		"auxiliary_file": "C:\\ATTEST\\Tools\\WP4\\T44V3\\input_data\\PT_PROF.ods",
+		"scenario_file": "C:\\ATTEST\\Tools\\WP4\\T44V3\\input_data\\scenario_gen.ods",
+		"output_dir": "C:\\ATTEST\\Tools\\WP4\\T44V3\\output_data",		
+		"problem": 4,
+		"case_name": "PT",
+		"profile": 1,
+		"year": 2030,
+		"flexibility": 1
+	}
+}
