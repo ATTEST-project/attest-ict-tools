@@ -42,7 +42,7 @@ def setup_package():
             jose.melchorgutierrez@manchester.ac.uk',
         packages=find_packages(),
         package_data={'pyensys': ['json/*.json', 'tests/json/*.json', 'tests/excel/*.xlsx', 'tests/ods/*.ods']},
-        install_requires=['click', 'pandas', 'pyomo', 'pypsa', 'networkx', 'pytest', 'pandapower', 'numpy', 'scikit-learn',
+        install_requires=['click', 'pandas', 'pyomo', 'pypsa', 'networkx', 'pytest', 'pandapower', 'numpy', 'sklearn',
                           'tables', 'odfpy', 'openpyxl'],
         extras_require={"test": ["pytest"]},
         cmdclass={"build_ext": new_build_ext},
