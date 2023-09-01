@@ -1,0 +1,14 @@
+{
+	"parameters": {
+		"matpower_network_file": "C:\\ATTEST\\tools\\WP4\\T45\\data\\Transmission_Network_PT_2020.m",
+		"network_file": "C:\\ATTEST\\tools\\WP4\\T45\\converted_network_data.xlsx",
+		"out_file": "C:\\ATTEST\\tools\\WP4\\T45\\tool_output.xlsx",
+		"PV_production_profile_file": "C:\\ATTEST\\tools\\WP4\\T45\\data\\PV_production_diagram.xlsx",		
+		"flexibity_devices_states_file": "C:\\ATTEST\\tools\\WP4\\T45\\data\\procured_flexibility_PT_2050_wf.xlsx",
+		"DA_curtailment_file": "C:\\ATTEST\\tools\\WP4\\T45\\data\\PT_2050_wf_Normal.xlsx",
+		"state_estimation_csv_file": "C:\\ATTEST\\tools\\WP4\\T45\\data\\state_estimation.csv",
+		"current_time_period": "t1",
+		"output_distribution_bus": "n1",
+		"flex_devices_tech_char_file": "C:\\ATTEST\\tools\\WP4\\T45\\data\\PT_Tx_2050.xlsx"
+	}
+}
