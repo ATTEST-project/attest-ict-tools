@@ -1,0 +1,13 @@
+{
+	"parameters": {
+		"network_file": "C:\\ATTEST\\Tools\\WP4\\T44V3_DEMO\\input_data\\Croatian.ods",
+		"auxiliary_file": "C:\\ATTEST\\Tools\\WP4\\T44V3_DEMO\\input_data\\Croatian_PROF.ods",
+		"scenario_file": "C:\\ATTEST\\Tools\\WP4\\T44V3_DEMO\\input_data\\scenario_gen.ods",
+		"output_dir": "C:\\ATTEST\\Tools\\WP4\\T44V3_DEMO\\output_data",		
+		"problem": 4,
+		"case_name": "Croatian",
+		"profile": 1,
+		"year": 2040,
+		"flexibility": 1
+	}
+}
