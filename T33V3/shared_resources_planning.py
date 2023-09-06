@@ -1898,10 +1898,22 @@ def _write_operational_planning_main_info_per_operator(network, sheet, operator_
     col_idx += 1
     for year in results:
         for day in results[year]:
-            gen_aux = results[year][day]['total_gen']
-            if network.params.rg_curt:
-                gen_aux -= results[year][day]['gen_curt']
-            sheet.cell(row=line_idx, column=col_idx).value = gen_aux
+            sheet.cell(row=line_idx, column=col_idx).value = results[year][day]['total_gen']
+            sheet.cell(row=line_idx, column=col_idx).number_format = decimal_style
+            col_idx += 1
+
+    # Total Conventional Generation
+    line_idx += 1
+    col_idx = 1
+    sheet.cell(row=line_idx, column=col_idx).value = operator_type
+    col_idx += 1
+    sheet.cell(row=line_idx, column=col_idx).value = tn_node_id
+    col_idx += 1
+    sheet.cell(row=line_idx, column=col_idx).value = 'Conventional Generation, [MWh]'
+    col_idx += 1
+    for year in results:
+        for day in results[year]:
+            sheet.cell(row=line_idx, column=col_idx).value = results[year][day]['total_conventional_gen']
             sheet.cell(row=line_idx, column=col_idx).number_format = decimal_style
             col_idx += 1
 
@@ -1916,10 +1928,7 @@ def _write_operational_planning_main_info_per_operator(network, sheet, operator_
     col_idx += 1
     for year in results:
         for day in results[year]:
-            gen_aux = results[year][day]['total_renewable_gen']
-            if network.params.rg_curt:
-                gen_aux -= results[year][day]['gen_curt']
-            sheet.cell(row=line_idx, column=col_idx).value = gen_aux
+            sheet.cell(row=line_idx, column=col_idx).value = results[year][day]['total_renewable_gen']
             sheet.cell(row=line_idx, column=col_idx).number_format = decimal_style
             col_idx += 1
 
@@ -1950,7 +1959,7 @@ def _write_operational_planning_main_info_per_operator(network, sheet, operator_
     col_idx += 1
     for year in results:
         for day in results[year]:
-            sheet.cell(row=line_idx, column=col_idx).value = results[year][day]['total_gen'] - results[year][day]['total_load']
+            sheet.cell(row=line_idx, column=col_idx).value = results[year][day]['losses']
             sheet.cell(row=line_idx, column=col_idx).number_format = decimal_style
             col_idx += 1
 
@@ -2191,7 +2200,7 @@ def _write_shared_energy_storages_results_to_excel(planning_problem, workbook, r
     row_idx = 1
     decimal_style = '0.00'
     percent_style = '0.00%'
-    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
+    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_conventional_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
 
     # Write Header
     sheet.cell(row=row_idx, column=1).value = 'Node ID'
@@ -2653,7 +2662,7 @@ def _write_network_voltage_results_per_operator(network, sheet, operator_type, r
 
     decimal_style = '0.00'
 
-    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
+    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_conventional_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
     violation_fill = PatternFill(start_color='FFFF0000', end_color='FFFF0000', fill_type='solid')
 
     for year in results:
@@ -2782,7 +2791,7 @@ def _write_network_consumption_results_to_excel(planning_problem, workbook, resu
 def _write_network_consumption_results_per_operator(network, params, sheet, operator_type, row_idx, results, tn_node_id='-'):
 
     decimal_style = '0.00'
-    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
+    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_conventional_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
     violation_fill = PatternFill(start_color='FFFF0000', end_color='FFFF0000', fill_type='solid')
 
     for year in results:
@@ -3049,7 +3058,7 @@ def _write_network_generation_results_to_excel(planning_problem, workbook, resul
 def _write_network_generation_results_per_operator(network, params, sheet, operator_type, row_idx, results, tn_node_id='-'):
 
     decimal_style = '0.00'
-    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
+    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_conventional_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
     violation_fill = PatternFill(start_color='FFFF0000', end_color='FFFF0000', fill_type='solid')
 
     for year in results:
@@ -3271,7 +3280,7 @@ def _write_network_branch_results_per_operator(network, sheet, operator_type, ro
 
     decimal_style = '0.00'
     perc_style = '0.00%'
-    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
+    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_conventional_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
     violation_fill = PatternFill(start_color='FFFF0000', end_color='FFFF0000', fill_type='solid')
 
     aux_string = str()
@@ -3382,7 +3391,7 @@ def _write_network_power_flow_results_per_operator(network, sheet, operator_type
 
     decimal_style = '0.00'
     perc_style = '0.00%'
-    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
+    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_conventional_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
 
     for year in results:
         for day in results[year]:
@@ -3833,7 +3842,7 @@ def _write_network_energy_storages_results_per_operator(network, sheet, operator
 
     decimal_style = '0.00'
     percent_style = '0.00%'
-    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
+    exclusions = ['runtime', 'obj', 'gen_cost', 'total_load', 'total_gen', 'total_conventional_gen', 'total_renewable_gen', 'losses', 'gen_curt', 'load_curt', 'flex_used']
 
     for year in results:
         for day in results[year]:
