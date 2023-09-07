@@ -1,4 +1,4 @@
-rem T41V2 installer
+REM T41V2 installer
 set CONDA_PATH=C:\ProgramData\miniforge3\condabin\conda
 set JULIA_PATH=C:\ATTEST\julia-167
 

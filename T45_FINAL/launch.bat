@@ -8,10 +8,12 @@ REM PLEASE DO NOT WRAP THE AMPL_PATH IN QUOTES OR DOUBLE QUOTES, OTHERWISE THE P
 set AMPL_PATH=C:\ATTEST\ampl_t45
 set PATH=%AMPL_PATH%;%PATH%
 
-set JULIA_DEPOT_PATH=C:\ATTEST\tools\juliaenvs\T45\.julia
+set JULIA_DEPOT_PATH=C:\ATTEST\tools\juliaenvs\T45_FINAL\.julia
 set TOOL_PATH="C:\ATTEST\tools\WP4\T45_FINAL"
-set CONDA_ENV_PATH="C:\ATTEST\tools\pyenvs\T45\py38_conda_env"
-set JULIA_PROJECT_PATH="C:\ATTEST\tools\juliaenvs\T45\T45_JL_ENV"
+set CONDA_ENV_PATH="C:\ATTEST\tools\pyenvs\T45_FINAL\py38_conda_env"
+set JULIA_PROJECT_PATH="C:\ATTEST\tools\juliaenvs\T45_FINAL\T45_JL_ENV"
+
+echo %DATE% %TIME%
 
 call cd %TOOL_PATH%
 call %CONDA_PATH% activate %CONDA_ENV_PATH%
@@ -67,8 +69,11 @@ call %AMPL_PATH%\ampl.exe main.run || goto :error
 
 call %CONDA_PATH% deactivate
 endlocal
+echo %DATE% %TIME%
 exit /b 0
 
 :error
 echo Failed with error #%errorlevel%.
+endlocal
+echo %DATE% %TIME%
 exit /b %errorlevel%

@@ -13,6 +13,8 @@ set TOOL_PATH="C:\ATTEST\tools\WP4\T45"
 set CONDA_ENV_PATH="C:\ATTEST\tools\pyenvs\T45\py38_conda_env"
 set JULIA_PROJECT_PATH="C:\ATTEST\tools\juliaenvs\T45\T45_JL_ENV"
 
+echo %DATE% %TIME%
+
 call cd %TOOL_PATH%
 call %CONDA_PATH% activate %CONDA_ENV_PATH%
 
@@ -67,8 +69,11 @@ call %AMPL_PATH%\ampl.exe main.run || goto :error
 
 call %CONDA_PATH% deactivate
 endlocal
+echo %DATE% %TIME%
 exit /b 0
 
 :error
 echo Failed with error #%errorlevel%.
+endlocal
+echo %DATE% %TIME%
 exit /b %errorlevel%

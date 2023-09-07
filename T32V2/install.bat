@@ -1,4 +1,4 @@
-rem set these paths to reflect the target environment
+REM T32V2 installer
 set CONDA_PATH=C:\ProgramData\miniforge3\condabin\conda
 set JULIA_PATH=C:\ATTEST\julia-167
 

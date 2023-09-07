@@ -14,15 +14,19 @@ set JULIA_PROJECT=C:\ATTEST\tools\juliaenvs\T32V2\T32_JL_ENV
 set PYTHON=%CONDA_ENV_PATH%\python.exe
 set PATH=%JULIA_PATH%\bin;%PATH%
 
+echo %DATE% %TIME%
+
 call cd %TOOL_PATH%
 call %CONDA_PATH% activate %CONDA_ENV_PATH%
 call python cli.py run_wp6 --input_file %1 || goto :error
 
 call %CONDA_PATH% deactivate
 endlocal
+echo %DATE% %TIME%
 exit /b 0
 
 :error
 echo Failed with error #%errorlevel%.
 endlocal
+echo %DATE% %TIME%
 exit /b %errorlevel%

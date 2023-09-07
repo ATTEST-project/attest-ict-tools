@@ -1,4 +1,4 @@
-rem T26 installer
+REM T33V3 installer
 set CONDA_PATH=C:\ProgramData\miniforge3\condabin\conda
 set CONDA_ENV_PATH=C:\ATTEST\tools\pyenvs\T33\py38_conda_env
 

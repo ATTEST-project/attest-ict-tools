@@ -1,4 +1,5 @@
 @echo off
+setlocal
 
 set JULIA_PATH="C:\ATTEST\Julia-167\bin\julia.exe"
 set CONDA_PATH="C:\ProgramData\miniforge3\condabin\conda"
@@ -13,10 +14,12 @@ call cd %TOOL_PATH%
 call %CONDA_PATH% activate %CONDA_ENV_PATH%
 call %JULIA_PATH% --project=%JULIA_PROJECT_PATH% launch.jl -j %1 || goto :error
 call %CONDA_PATH% deactivate
+endlocal
 echo %DATE% %TIME%
 exit /b 0
 
 :error
 echo Failed with error #%errorlevel%.
+endlocal
 echo %DATE% %TIME%
 exit /b %errorlevel%

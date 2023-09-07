@@ -1,4 +1,4 @@
-rem TSG installer
+REM TSG installer
 set CONDA_PATH=C:\ProgramData\miniforge3\condabin\conda
 set JULIA_PATH=C:\ATTEST\julia-167
 

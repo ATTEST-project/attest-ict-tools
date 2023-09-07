@@ -1,3 +1,4 @@
+REM T31V2 installer
 set CONDA_PATH=C:\ProgramData\miniforge3\condabin\conda
 set CONDA_ENV_PATH=C:\ATTEST\tools\pyenvs\T31V2\py39_conda_env
 

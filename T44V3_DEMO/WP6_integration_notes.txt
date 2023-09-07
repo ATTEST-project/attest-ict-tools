@@ -1,0 +1,2 @@
+T43V3_DEMO does not need an install.bat: it uses the same environment as T43V3
+(Of course, to use T43V3_DEMO, T43V3 must be already installed through its install.bat)
