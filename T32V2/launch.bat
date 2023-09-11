@@ -7,7 +7,7 @@ set CONDA_PATH=C:\ProgramData\miniforge3\condabin\conda
 set TOOL_PATH=C:\ATTEST\tools\WP3\T32V2
 
 
-set CONDA_ENV_PATH=C:\ATTEST\tools\pyenvs\T32V2\py37_conda_env
+set CONDA_ENV_PATH=C:\ATTEST\tools\pyenvs\T32V2\py39_conda_env
 set JULIA_DEPOT_PATH=C:\ATTEST\tools\juliaenvs\T32V2\.julia
 set JULIA_PROJECT=C:\ATTEST\tools\juliaenvs\T32V2\T32_JL_ENV
 
