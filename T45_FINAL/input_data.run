@@ -7,7 +7,7 @@ reset;
 param network_data_file symbolic;
 let network_data_file := $network_file;
 
-#Flexibility data - output of T4.1 tool
+#Flexibility data - output of T4.4 tool
 param flexibity_devices_tech_char_file symbolic;
 let flexibity_devices_tech_char_file  := $flex_devices_tech_char_file;
 
