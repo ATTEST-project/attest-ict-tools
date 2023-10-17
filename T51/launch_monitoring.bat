@@ -1,5 +1,4 @@
 @echo off
-setlocal
 
 set XYZ_CURRENT_DIR=%cd%
 
@@ -14,13 +13,12 @@ call %CONDA_PATH% activate %CONDA_ENV_PATH%
 call python monitoring_cl_int.py --json-file %1 || goto :error
 call %CONDA_PATH% deactivate
 cd %XYZ_CURRENT_DIR=%
-endlocal
 echo %DATE% %TIME%
 exit /b 0
 
 :error
-echo Failed with error #%errorlevel%.
+set TOOL_ERROR=%errorlevel%
+echo Failed with error #%TOOL_ERROR%.
 cd %XYZ_CURRENT_DIR=%
-endlocal
 echo %DATE% %TIME%
-exit /b %errorlevel%
+exit /b %TOOL_ERROR%

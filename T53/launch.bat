@@ -12,5 +12,4 @@ exit /b 0
 
 :error
 echo Failed with error #%errorlevel%.
-call %CONDA_PATH% deactivate
 exit /b %errorlevel%
