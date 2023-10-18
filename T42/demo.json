@@ -5,7 +5,7 @@
 		"out_file": "C:\\ATTEST\\tools\\WP4\\T42\\tool_output.xlsx",
 		"PV_production_profile_file": "C:\\ATTEST\\tools\\WP4\\T42\\data\\PV_production_diagram.xlsx",		
 		"flexibity_devices_states_file": "C:\\ATTEST\\tools\\WP4\\T42\\data\\procured_flexibility\\ES_Dx_03_2030_W_Bd_WithFlex_output.xlsx",
-		"state_estimation_csv_file": "C:\\ATTEST\\tools\\WP4\\T42\\data\\state_estimation\\ES_Dx_03_2030_S_Bd\\ES_Dx_03_2030_S_Bd_t1.csv",
+		"state_estimation_csv_file": "C:\\ATTEST\\tools\\WP4\\T42\\data\\state_estimation\\ES_Dx_03_2030_W_Bd\\ES_Dx_03_2030_W_Bd_t1.csv",
 		"current_time_period": "t1",
 		"flex_devices_tech_char_file": "C:\\ATTEST\\tools\\WP4\\T42\\data\\EVPV_files\\ES_Dx_03_2030W.xlsx",
 		"trans_activation_file": "C:\\ATTEST\\tools\\WP4\\T42\\data\\trans_decisions\\trans_decisions_t1.xlsx"

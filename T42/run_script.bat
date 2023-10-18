@@ -8,7 +8,7 @@ set PV_production_profile_file=data\PV_production_diagram.xlsx
 set flexibity_devices_states_file=data\procured_flexibility\ES_Dx_03_2030_W_Bd_WithFlex_output.xlsx
 
 ::State estimation in form of T4.3
-set state_estimation_csv_file=data\state_estimation\ES_Dx_03_2030_S_Bd\ES_Dx_03_2030_S_Bd_t1.csv
+set state_estimation_csv_file=data\state_estimation\ES_Dx_03_2030_W_Bd\ES_Dx_03_2030_W_Bd_t1.csv
 
 ::Atctivation from T4.5 real-time transmission tool
 set trans_activation_file=data\trans_decisions\trans_decisions_t1.xlsx

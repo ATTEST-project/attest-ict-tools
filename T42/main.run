@@ -170,8 +170,8 @@ subject to power_f_rec_p {(l,n,m) in branch_from}:
 subject to power_t_rec_p {(l,n,m) in branch_to}:
  P_p[l,n,m] = (Vd_p[n]^2+Vq_p[n]^2)*(gl[l]+gl_to[l])
 + ( 
-  (-gl[l]*tr[l]+bl[l]*ti[l] )*(Vd_p[n]*Vd_p[m]+Vq_p[n]*Vq_p[m]) 
-+ ( bl[l]*tr[l]+gl[l]*ti[l] )*(Vd_p[n]*Vq_p[m]-Vq_p[n]*Vd_p[m]) )/tap[l]^2;
+  (-gl[l]*tr[l]-bl[l]*ti[l] )*(Vd_p[n]*Vd_p[m]+Vq_p[n]*Vq_p[m]) 
++ ( bl[l]*tr[l]-gl[l]*ti[l] )*(Vd_p[n]*Vq_p[m]-Vq_p[n]*Vd_p[m]) )/tap[l]^2;
  			
 subject to reactive_f_rec_p {(l,n,m) in branch_from}:
  Q_p[l,n,m] = -(Vd_p[n]^2+Vq_p[n]^2)*(bl[l]+bl_fr[l])/(tap[l]^2) 
@@ -182,8 +182,8 @@ subject to reactive_f_rec_p {(l,n,m) in branch_from}:
 subject to reactive_t_rec_p {(l,n,m) in branch_to}:
  Q_p[l,n,m] = -(Vd_p[n]^2+Vq_p[n]^2)*(bl[l]+bl_to[l]) 
 + (
-  ( bl[l]*tr[l]+gl[l]*ti[l] )*(Vd_p[n]*Vd_p[m]+Vq_p[n]*Vq_p[m]) 
-+ ( gl[l]*tr[l]-bl[l]*ti[l] )*(Vd_p[n]*Vq_p[m]-Vq_p[n]*Vd_p[m]) )/tap[l]^2;
+  ( bl[l]*tr[l]-gl[l]*ti[l] )*(Vd_p[n]*Vd_p[m]+Vq_p[n]*Vq_p[m]) 
++ ( gl[l]*tr[l]+bl[l]*ti[l] )*(Vd_p[n]*Vq_p[m]-Vq_p[n]*Vd_p[m]) )/tap[l]^2;
 
 
 
@@ -198,8 +198,8 @@ subject to power_f_rec_f {t in time_MPC, (l,n,m) in branch_from, sc in scen}:
 subject to power_t_rec_f {t in time_MPC, (l,n,m) in branch_to, sc in scen}:
  P_f[t,l,n,m,sc] = (Vd_f[t,n,sc]^2+Vq_f[t,n,sc]^2)*(gl[l]+gl_to[l])
 + ( 
-  (-gl[l]*tr[l]+bl[l]*ti[l] )*(Vd_f[t,n,sc]*Vd_f[t,m,sc]+Vq_f[t,n,sc]*Vq_f[t,m,sc]) 
-+ ( bl[l]*tr[l]+gl[l]*ti[l] )*(Vd_f[t,n,sc]*Vq_f[t,m,sc]-Vq_f[t,n,sc]*Vd_f[t,m,sc]) )/tap[l]^2;
+  (-gl[l]*tr[l]-bl[l]*ti[l] )*(Vd_f[t,n,sc]*Vd_f[t,m,sc]+Vq_f[t,n,sc]*Vq_f[t,m,sc]) 
++ ( bl[l]*tr[l]-gl[l]*ti[l] )*(Vd_f[t,n,sc]*Vq_f[t,m,sc]-Vq_f[t,n,sc]*Vd_f[t,m,sc]) )/tap[l]^2;
  			
 subject to reactive_f_rec_f {t in time_MPC, (l,n,m) in branch_from, sc in scen}:
  Q_f[t,l,n,m,sc] = -(Vd_f[t,n,sc]^2+Vq_f[t,n,sc]^2)*(bl[l]+bl_fr[l])/(tap[l]^2) 
@@ -210,8 +210,8 @@ subject to reactive_f_rec_f {t in time_MPC, (l,n,m) in branch_from, sc in scen}:
 subject to reactive_t_rec_f {t in time_MPC, (l,n,m) in branch_to, sc in scen}:
  Q_f[t,l,n,m,sc] = -(Vd_f[t,n,sc]^2+Vq_f[t,n,sc]^2)*(bl[l]+bl_to[l]) 
 + (
-  ( bl[l]*tr[l]+gl[l]*ti[l] )*(Vd_f[t,n,sc]*Vd_f[t,m,sc]+Vq_f[t,n,sc]*Vq_f[t,m,sc]) 
-+ ( gl[l]*tr[l]-bl[l]*ti[l] )*(Vd_f[t,n,sc]*Vq_f[t,m,sc]-Vq_f[t,n,sc]*Vd_f[t,m,sc]) )/tap[l]^2;
+  ( bl[l]*tr[l]-gl[l]*ti[l] )*(Vd_f[t,n,sc]*Vd_f[t,m,sc]+Vq_f[t,n,sc]*Vq_f[t,m,sc]) 
++ ( gl[l]*tr[l]+bl[l]*ti[l] )*(Vd_f[t,n,sc]*Vq_f[t,m,sc]-Vq_f[t,n,sc]*Vd_f[t,m,sc]) )/tap[l]^2;
 
 
 
@@ -280,26 +280,6 @@ subject to reserve_Qdn_req:
 
 
 
-#Uncomment to inactivate the reserves
-/*
-fix {n in bus} PupL_p[n] := 0;
-fix {n in bus} PdnL_p[n] := 0;
-fix {n in bus} PdnDG_p[n] := 0;
-fix {n in bus} PupS_p[n] := 0;
-fix {n in bus} PdnS_p[n] := 0;
-fix {n in bus} QupS_p[n] := 0;
-fix {n in bus} QdnS_p[n] := 0;
-
-fix {t in time_MPC, n in refbus, sc in scen} PupL_f[t,n,sc] := 0;
-fix {t in time_MPC, n in refbus, sc in scen} PdnL_f[t,n,sc] := 0;
-fix {t in time_MPC, n in refbus, sc in scen} PdnDG_f[t,n,sc] := 0;
-fix {t in time_MPC, n in refbus, sc in scen} PdnS_f[t,n,sc] := 0;
-fix {t in time_MPC, n in refbus, sc in scen} PupS_f[t,n,sc] := 0;
-fix {t in time_MPC, n in refbus, sc in scen} QupS_f[t,n,sc] := 0;
-fix {t in time_MPC, n in refbus, sc in scen} QdnS_f[t,n,sc] := 0;
-*/
-
-
 #Solve statement
 option solver ipopt;
 option ipopt_options "linear_solver='ma27'";
@@ -351,81 +331,4 @@ display {n in bus: PupS_p[n]>0.001} PupS_p[n]*baseMVA;
 display {n in bus: PdnS_p[n]>0.001} PdnS_p[n]*baseMVA;
 display {n in bus: QupS_p[n]>0.001} QupS_p[n]*baseMVA;
 display {n in bus: QdnS_p[n]>0.001} QdnS_p[n]*baseMVA;
-
-
-###### 
-/*
-param br_v {t in time};
-param i_v {t in time};
-
-param br_ov {t in time};
-param i_ov {t in time};
-
-param br_uv {t in time};
-param i_uv {t in time};
-
-param PL_up {t in time};
-param PL_dn {t in time};
-
-param PDG_dn {t in time};
-
-param PS_up {t in time};
-param PS_dn {t in time};
-
-param Ptot_up {t in time};
-param Ptot_dn {t in time};
-
-param QS_up {t in time};
-param QS_dn {t in time};
-
-param KPI_file symbolic := "KPI\KPI_UK2050_Su.xlsx";
-
-table KPI_wof OUT "amplxl" (KPI_file):
-	[time], br_v, i_v, br_ov, i_ov, br_uv, i_uv, PL_up, PL_dn, PDG_dn, PS_up, PS_dn, Ptot_up, Ptot_dn, QS_up, QS_dn;	
-
-table KPI_wf OUT "amplxl" (KPI_file):
-	[time], br_v, i_v, br_ov, i_ov, br_uv, i_uv, PL_up, PL_dn, PDG_dn, PS_up, PS_dn, Ptot_up, Ptot_dn, QS_up, QS_dn;	
-
-
-for {t in time} {
-display t;
-
-let state_estimation_file := "data\state_estimation\SE_UK2050_Su\state_estimation_UK2050_Su_"&t&".csv";
-let tc := t;
-
-read table state_estimation;
-let {n in bus} Pinj[n] := Pinj[n]/100;
-let {n in bus} Qinj[n] := Qinj[n]/100;
-
-let {j in 1.._nvars} _var[j] := _var[j].init0;
-solve SC_AC_OPF;
-
-let br_v[t]  := sum {(l,n,m) in branch_from:sqrt(P_p[l,n,m]^2 + Q_p[l,n,m]^2)>Sl_max[l]+0.001} 1;
-let i_v[t]   := sum {(l,n,m) in branch:sqrt(P_p[l,n,m]^2 + Q_p[l,n,m]^2)>Sl_max[l]+0.001} (sqrt(P_p[l,n,m]^2 + Q_p[l,n,m]^2)-Sl_max[l])/2*100;
-
-let br_ov[t] := sum {n in bus: sqrt(Vd_p[n]^2 + Vq_p[n]^2)>vmax[n]+0.0005} 1;
-let i_ov[t]  := sum {n in bus: sqrt(Vd_p[n]^2 + Vq_p[n]^2)>vmax[n]+0.0005} (sqrt(Vd_p[n]^2 + Vq_p[n]^2)-vmax[n]);
-
-let br_uv[t] := sum {n in bus: sqrt(Vd_p[n]^2 + Vq_p[n]^2)<vmin[n]-0.0005} 1;
-let i_uv[t]  := sum {n in bus: sqrt(Vd_p[n]^2 + Vq_p[n]^2)<vmin[n]-0.0005} (sqrt(Vd_p[n]^2 + Vq_p[n]^2)-vmin[n]);
-
-let PL_up[t] := sum {n in bus} PupL_p[n]*100;
-let PL_dn[t] := sum {n in bus} PdnL_p[n]*100;
-
-let PDG_dn[t] := sum {n in bus} PdnDG_p[n]*100;
-
-let PS_up[t] := sum {n in bus} PupS_p[n]*100;
-let PS_dn[t] := sum {n in bus} PdnS_p[n]*100;
-
-let Ptot_up[t] := PL_up[t] + PS_up[t];
-let Ptot_dn[t] := PL_dn[t] + PDG_dn[t] + PS_dn[t];
-
-let QS_up[t] := sum {n in bus} QupS_p[n]*100;
-let QS_dn[t] := sum {n in bus} QdnS_p[n]*100;
-}
-
-write table KPI_wof;
-
-*/
-
 
