@@ -1,4 +1,4 @@
-# ATTEST-ICT Platform: tools integration
+# ATTEST-ICT Platform: open-source toolbox integration
 
 In all the tools directories (but T51, T52 T53) there is an install.bat script that creates the specific tool's Conda environment: please open a terminal in each tool directory and run the tool's installation script
 For T51, T52 and T5.3 execute Setup_ATTEST_env.ps1).
