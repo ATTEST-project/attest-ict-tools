@@ -10,3 +10,5 @@ A launch.bat, one for each tool, activates the tool's environment and executes i
 Please note that there may be the need to change the install.bat and launch.bat scripts, to reflect a specific installation (e.g., with the correct path for a third party solver executable).
 
 More information about the integration of the ATTEST open-source toolbox inside the ATTEST ICT Platform, can be found in the ATTEST D6.2 "Integration of the open-source toolbox".
+
+Note: this project contains code from the ATTEST open-source toolkit, licensed under the EUPL v1.2
