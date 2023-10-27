@@ -1,4 +1,8 @@
-# ATTEST-ICT Platform: open-source toolbox integration
+# ATTEST-ICT Tools: open-source toolbox integration
+
+This project provides the integration infrastructure for the open-source toolbox, and it is used by the ICT Platform. It includes the tools integrated in the Platform, and the set of wrappers used by the Platform to run the tools.
+
+#Installation
 
 In all the tools directories (but T51, T52 T53) there is an install.bat script that creates the specific tool's Conda environment: please open a terminal in each tool directory and run the tool's installation script
 For T51, T52 and T5.3 execute Setup_ATTEST_env.ps1).
