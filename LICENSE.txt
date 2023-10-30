@@ -9,7 +9,7 @@ This software is authored by
 This program is free software: you can redistribute it and/or modify it under the terms of the European Union Public Licence v1.2 as published by the European Union.
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the European Union Public Licence v1.2 for more details.
 You should have received a copy of the European Union Public Licence v1.2 along with this program. If not, see https://www.eupl.eu 
-This program includes and makes use of the following software
+This program makes use of the following software
 * Name of the software: (software link)
 * ATTEST open-source toolbox (https://github.com/ATTEST-project)
 * Miniforge (https://github.com/conda-forge/miniforge)
